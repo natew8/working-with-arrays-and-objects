@@ -50,9 +50,20 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(let key in employees[key]){
+    if(employees[key].includes('Theo')){
+      delete employees[key]
+    }
+    if(typeof employees[key] === 'Lorie'){
+      for(let prop in employees[key]){
+        employees[key][prop] = 'HR'
+      }
+    }
+  }
+}
 
-
+console.log(employees)
 
 ////////// PROBLEM 2 //////////
 
