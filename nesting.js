@@ -52,9 +52,15 @@ var employees = [
 
 function employeeUpdater(){
   for(i = 0; i < employees.length; i++ )
+    if(employees[i].firstName === 'Theo'){
+      delete employees[i]
+    } else if(employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
+  }
+  return employees
 }
 
-console.log(employees)
+// console.log(employees)
 
 ////////// PROBLEM 2 //////////
 
@@ -70,7 +76,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr){
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] === arr[j]){
+        arr.splice(j, 1)
+        j--
+      }
+    }
+  }
+  return arr
+}
 
 
 
@@ -98,9 +114,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name
+
 
 
 
@@ -140,15 +156,23 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
-
+function recordCleaner(){
+  for(let key in myCar) {
+    if(typeof myCar[key] ==='object') {
+      for(let prop in myCar[key]) {
+        myCar[key][prop].atFaultForAccident = false
+      }
+    }
+  } 
+}
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
 var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
+
+
 
 /*
   Above is an array of arrays. Use two for loops.
@@ -159,6 +183,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+function looper(){
+  numsArr.forEach((element) => {
+    for(let i = 0; i < element.length; i++){
+      if(element[i] %2 === 0){
+        element[i] = "even";
+      } else {
+        element[i] = 'odd';
+      }
+    }
+  })
+  return numsArr;
+}
