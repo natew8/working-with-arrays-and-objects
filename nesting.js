@@ -51,16 +51,7 @@ var employees = [
 */
 
 function employeeUpdater(){
-  for(let key in employees[key]){
-    if(employees[key].includes('Theo')){
-      delete employees[key]
-    }
-    if(typeof employees[key] === 'Lorie'){
-      for(let prop in employees[key]){
-        employees[key][prop] = 'HR'
-      }
-    }
-  }
+  for(i = 0; i < employees.length; i++ )
 }
 
 console.log(employees)
